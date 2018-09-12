@@ -7,19 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script>
-        let results = [
-            'Amazing!',
-            'It\'s ok',
-            'average',
-            'It\'s total shit.'
-        ]
+        function getRngResult() {
+            let random = Math.random()
+            let result
 
-        function getRandomInt() {
-            return Math.floor(Math.random() * results.length)
+            if (random < .7) {
+                result = `It's total shit.`
+            }
+            else if (random >= .7 && random < .98) {
+                result = `It's ok`
+            }
+            else {
+                result = `Lucky!`
+            }
+
+            return result
         }
 
         window.onload = function() {
-            document.getElementsByClassName('rng')[0].textContent = results[getRandomInt()]
+            document.getElementsByClassName('rng')[0].textContent = getRngResult()
         }
     </script>
     <style>
@@ -47,6 +53,6 @@
     </style>
 </head>
 <body>
-    <div class="rng">test</div>
+    <div class="rng"></div>
 </body>
 </html>
