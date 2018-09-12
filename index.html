@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>How's my RNG?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script>
+        let results = [
+            'Amazing!',
+            'It\'s ok',
+            'average',
+            'It\'s total shit.'
+        ]
+
+        function getRandomInt() {
+            return Math.floor(Math.random() * results.length)
+        }
+
+        window.onload = function() {
+            document.getElementsByClassName('rng')[0].textContent = results[getRandomInt()]
+        }
+    </script>
+    <style>
+        html, body {
+            align-items: center;
+            background-color: #171719;
+            color: #e6e4de;
+            display: flex;
+            font-family: 'Roboto', sans-serif;
+            height: 100%;
+            justify-content: center;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            font-size: 50px;
+            top: 0;
+            width: 100%;
+        }
+
+        .rng {
+            position: relative;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="rng">test</div>
+</body>
+</html>
